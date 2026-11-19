@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coffee Shop Eric</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <a href="#" class="login" id="loginBtn">login</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="icon-link instagram" aria-label="Instagram">
+        <img src="images/instagram.png" alt="Instagram">
+      </a>
+      <a href="mailto:hello@coffeeshoperic.com" class="icon-link gmail" aria-label="Gmail">
+        <img src="images/gmail.png" alt="Gmail">
+      </a>
+    </header>
+
+    <!-- Title + search -->
+    <section class="hero">
+      <h1 class="title">coffee shop Eric</h1>
+      <form class="search" id="searchForm" role="search">
+        <input type="text" id="searchInput" aria-label="Search drinks" autocomplete="off">
+        <button type="submit" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+          </svg>
+        </button>
+      </form>
+    </section>
+
+    <!-- Drinks -->
+    <section class="drinks" id="drinks">
+      <figure class="drink" data-name="americano">
+        <img src="images/americano.png" alt="Americano">
+        <figcaption>Americano</figcaption>
+      </figure>
+      <figure class="drink" data-name="coffee classic">
+        <img src="images/coffee-classic.png" alt="Coffee classic">
+        <figcaption>coffee classic</figcaption>
+      </figure>
+      <figure class="drink" data-name="iced coffee">
+        <img src="images/iced-coffee.png" alt="Iced coffee">
+        <figcaption>iced coffee</figcaption>
+      </figure>
+    </section>
+    <p class="no-results" id="noResults" hidden>No drinks found.</p>
+
+    <!-- Hours + menu -->
+    <section class="info">
+      <span class="divider"></span>
+      <div class="hours">
+        <p>07.00AM</p>
+        <p>10.00PM</p>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Open full menu">
+        <img src="images/menu.png" alt="Menu">
+      </button>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+      <a href="tel:+630000000000" class="phone" aria-label="Call us">
+        <img src="images/phone.png" alt="Phone">
+      </a>
+      <a href="mailto:hello@coffeeshoperic.com" class="contact-bar">contact</a>
+    </section>
+
+  </div>
+
+  <!-- Menu lightbox -->
+  <div class="lightbox" id="lightbox" hidden>
+    <img src="images/menu.png" alt="Full menu">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

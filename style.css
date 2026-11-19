@@ -1,0 +1,197 @@
+/* Design tokens (taken from the Figma frame) */
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --bar: #d9d9d9;
+  --icon-bg: #f5f5f5;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-weight: 400;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* Canvas matches the 1333px Figma frame */
+.page {
+  width: 100%;
+  max-width: 1333px;
+  margin: 0 auto;
+  padding-bottom: 8vw;
+  overflow: hidden;
+}
+
+/* ---------- Top bar ---------- */
+.topbar {
+  position: relative;
+  height: 7.2%;
+  min-height: 70px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0;
+}
+.login {
+  position: absolute;
+  left: 63.3%;
+  top: 1.4vw;
+  font-size: clamp(26px, 4.1vw, 54px);
+  line-height: 1;
+}
+.icon-link { position: absolute; display: block; }
+.icon-link img { width: 100%; height: 100%; object-fit: cover; }
+.instagram {
+  left: 74.4%; top: 0;
+  width: 7.1%; aspect-ratio: 1;
+  background: var(--icon-bg);
+}
+.gmail {
+  left: 86.3%; top: 0.9%;
+  width: 8.4%; aspect-ratio: 112 / 62;
+  background: var(--icon-bg);
+}
+
+/* ---------- Title + search ---------- */
+.hero { margin-top: 12.5vw; }
+.title {
+  width: 53.6%;
+  margin-left: 27.9%;
+  text-align: center;
+  font-weight: 400;
+  font-size: clamp(30px, 4.1vw, 54px);
+  line-height: 1.2;
+  padding-bottom: 1.2vw;
+  border-bottom: 2px solid #000;
+}
+.search {
+  position: relative;
+  width: 34.2%;
+  height: 3.5vw;
+  min-height: 34px;
+  margin: 3.7vw 0 0 34.9%;
+}
+.search input {
+  width: 100%; height: 100%;
+  border: 2px solid #000;
+  border-radius: 999px;
+  padding: 0 3.2rem 0 1.2rem;
+  font: inherit;
+  font-size: 1rem;
+  background: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+  outline: none;
+}
+.search input:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+.search button {
+  position: absolute;
+  right: 1.1rem; top: 50%;
+  transform: translateY(-50%);
+  background: none; border: 0;
+  cursor: pointer; color: #222;
+  display: grid; place-items: center;
+}
+
+/* ---------- Drinks ---------- */
+.drinks {
+  margin-top: 17.5vw;
+  display: grid;
+  grid-template-columns: 395fr 456fr 410fr;
+  column-gap: 2.7%;
+  align-items: start;
+}
+.drink { text-align: center; transition: opacity .2s; }
+.drink[hidden] { display: none; }
+.drink img { width: 100%; height: auto; }
+.drink:nth-child(1) img { margin-top: 1.4vw; }
+.drink:nth-child(2) img { margin-top: 1.0vw; }
+.drink:nth-child(3) img { margin-top: 0; }
+.drink figcaption {
+  margin-top: 2.4vw;
+  font-size: clamp(24px, 4.1vw, 54px);
+  line-height: 1.2;
+}
+.drink:nth-child(1) figcaption { padding-left: 1.2%; }
+.drink:nth-child(2) figcaption { padding-left: 4.4%; }
+.drink:nth-child(3) figcaption { padding-left: 5.5%; }
+.no-results {
+  text-align: center; margin-top: 2rem; font-size: 1.25rem;
+}
+
+/* ---------- Hours + menu ---------- */
+.info {
+  position: relative;
+  margin-top: 6.5vw;
+  display: grid;
+  grid-template-columns: 1fr 25.8%;
+  align-items: center;
+  min-height: 36.4vw;
+}
+.divider {
+  position: absolute;
+  left: 7.4%; top: 1.2vw;
+  width: 10.9%; height: 1px;
+  background: #f0f0f0;
+}
+.hours {
+  justify-self: end;
+  margin-right: 8%;
+  font-size: clamp(28px, 4.1vw, 54px);
+  line-height: 1;
+  display: flex; flex-direction: column;
+  gap: 2.6vw;
+}
+.hours p:nth-child(1) { margin-right: 0.4%; }
+.hours p:nth-child(2) { padding-left: 0.4%; }
+.menu-btn {
+  border: 0; background: none; cursor: zoom-in;
+  padding: 0; align-self: start;
+  width: 100%;
+  margin-right: 0.15%;
+}
+.menu-btn img { width: 100%; height: auto; }
+.menu-btn:focus-visible { outline: 3px solid #1a4fb3; outline-offset: 3px; }
+
+/* ---------- Contact ---------- */
+.contact {
+  margin: 17.8vw 0 0 15.2%;
+  width: 58.9%;
+  display: flex;
+  align-items: flex-start;
+  gap: 2.6%;
+}
+.phone {
+  flex: 0 0 22%;
+  margin-top: 4vw;
+  display: block;
+}
+.phone img { width: 100%; height: auto; }
+.contact-bar {
+  flex: 1;
+  height: 8vw;
+  background: var(--bar);
+  display: flex; align-items: center; justify-content: center;
+  font-size: clamp(28px, 4.1vw, 54px);
+  padding-right: 6.5%;
+  transition: background .2s;
+}
+.contact-bar:hover { background: #c8c8c8; }
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  position: fixed; inset: 0;
+  background: rgba(0, 0, 0, .75);
+  display: grid; place-items: center;
+  padding: 2rem; z-index: 50; cursor: zoom-out;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img { max-height: 100%; width: auto; max-width: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
